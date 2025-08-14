@@ -29,6 +29,12 @@ form.addEventListener("submit", (event) => {
     habits.push(`${habit_name} with a streak of ${habit_streak}`)
     habit_list.innerHTML = habits.map(habit => `<li>${habit}</li>`);
 })
+let loaded_habits = JSON.parse(localStorage.getItem('habit'))
+console.log(loaded_habits)
+
+// habits.push(`${habit_name} with a streak of ${habit_streak}`)
+habit_list.innerHTML = loaded_habits.map(habit => `<li>${habit.habit_name}  with a streak of ${habit.habit_streak}</li>`);
+
 
 // const storedUserProfile = localStorage.getItem('userProfile');
 // if (storedUserProfile) {
